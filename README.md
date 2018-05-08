@@ -11,6 +11,8 @@
 * * * 
 
 #### .gitignore  不起作用解决办法
-git rm -r --cached .
-git add .
-git commit -m 'update .gitignore'
+* git rm -r --cached .
+
+* git add .
+
+* git commit -m 'update .gitignore'
