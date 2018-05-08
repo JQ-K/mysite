@@ -1,0 +1,23 @@
+[0;1;32m●[0m apache2.service - LSB: Apache2 web server
+   Loaded: loaded (/etc/init.d/apache2; bad; vendor preset: enabled)
+  Drop-In: /lib/systemd/system/apache2.service.d
+           └─apache2-systemd.conf
+   Active: [0;1;32mactive (running)[0m (Result: exit-code) since 六 2017-11-25 20:26:20 CST; 2 weeks 0 days ago
+     Docs: man:systemd-sysv-generator(8)
+  Process: 11313 ExecReload=/etc/init.d/apache2 reload [0;1;31m(code=exited, status=1/FAILURE)[0m
+    Tasks: 55 (limit: 512)
+   CGroup: /system.slice/apache2.service
+           ├─11316 /usr/sbin/apache2 -k start
+           ├─11319 /usr/sbin/apache2 -k start
+           └─11320 /usr/sbin/apache2 -k start
+
+12月 10 18:51:49 ubuntu apache2[11313]:  *
+12月 10 18:51:49 ubuntu apache2[11313]:  * The apache2 configtest failed. Not doing anything.
+12月 10 18:51:49 ubuntu apache2[11313]: Output of config test was:
+12月 10 18:51:49 ubuntu apache2[11313]: [Sun Dec 10 18:51:49.058975 2017] [alias:warn] [pid 11378:tid 139898222016384] AH00671: The Alias directive in /etc/apache2/sites-enabled/mysite.conf at line 13 will probably never match because it overlaps an earlier Alias.
+12月 10 18:51:49 ubuntu apache2[11313]: AH00526: Syntax error on line 15 of /etc/apache2/sites-enabled/mysite.conf:
+12月 10 18:51:49 ubuntu apache2[11313]: <Directory> directive requires additional arguments
+12月 10 18:51:49 ubuntu apache2[11313]: Action 'configtest' failed.
+12月 10 18:51:49 ubuntu apache2[11313]: The Apache error log may have more information.
+12月 10 18:51:49 ubuntu systemd[1]: [0;1;39mapache2.service: Control process exited, code=exited status=1[0m
+12月 10 18:51:49 ubuntu systemd[1]: [0;1;31mReload failed for LSB: Apache2 web server.[0m

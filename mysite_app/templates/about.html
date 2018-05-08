@@ -1,0 +1,134 @@
+
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+{% block title %} About {% endblock %}
+
+{% block content %}
+<div class="jumbotron" style="background:#1976D3; color:#CCC;">
+    <div class="container">
+        <h2> 关于我们 </h2>
+        <p> 桐花万里关山路，雏凤清于老凤声 </p>
+    </div>
+</div>
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-9">
+            <div id="history">
+            <h3> 发展历程 </h3>
+            <hr>
+            <p>
+              吉克创客空间成立于2017年5月，是由珠海地区一群硬件技术人才发起的民间非营利性组织（ＮＧＯ）。发展至今，已成为中国最大的创客组织之一…… 
+              
+            
+            </p>
+            <hr>
+            </div>
+
+            <div id="joinus">
+            <h3> 加入我们 </h3>
+            <hr>
+            <p> 我们是一支由创客、媒体人、设计师和工程师组成的跨界团队。我们崇尚创新、实践、分享的创客文化。欢迎更多有志青年加入我们。 </p>
+
+            <!-- Button trigger modle-->
+            <button type="button" class="btn btn-primary" data-toggle="modal"  data-target="#mymodal">
+                talents wanted
+            </button>
+            <!--modal-->
+            <div class="modal fade" id="mymodal" tabindex="-1" role="dialog" aria-labelledby="mymodalLable">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                           <button type="button" class="close" data-dismiss="modal" aria-lable="Close"><span aria-hidden="true">&times;</span></button>
+                           <h4 class="modal-title" id="mymodalLabel"> 诚聘英才 </h4>
+                        </div>
+                        <div class="modal-body">
+                            <table class="table table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th> 部门 </th>
+                                        <th> 岗位 </th>
+                                        <th> 岗位职责 </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                 {% if joblist %}
+                                     {% for job in joblist %}
+                                     <tr>
+                                         <td>{{ job.department }}</td>
+                                         <td>{{ job.position }}</td>
+                                         <td>{{ job.responsiblities }}</td>
+                                    </tr>
+                                     {% endfor %}
+                                 {% else %}
+                                    <tr>
+                                        <td>Null</td>
+                                        <td>Null</td>
+                                        <td>Null</td>
+                                    </tr>
+                                    {% endif %}
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary" > Save changes </button>
+                        </div>
+                    </div>
+                </div>
+            
+            </div>
+
+            <br>
+            </div>
+
+            <div id="contact">
+            <h3> 联系方式  </h3>
+            <hr>
+            <p><strong>地址</strong>:ｘｘ省ｘｘ市ｘｘ区ｘｘ路ｘｘ号 </p>
+            <p><strong>邮编</strong>:１２３４５６ </p>
+            <p><strong>电话</strong>: ０１０－８１８６６６２３４５ </p>
+            <p><strong>传真</strong>: ０１０－６１０２９１８８</p>
+            </div>
+
+            <div>
+            <p><strong>您可以填写下方的表单联系我们</strong> </p>
+                <form method="POST">
+                    <div class="form-group">
+                        <div class="input-group">
+                            <div class="input-group-addon">Email</div>
+                            <input name="Email" type="email" class="form-control" placeholder="您的邮箱地址" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="input-group">
+                            <div class="input-group-addon">Title</div>
+                            <input  name="Title" type="text" class="form-control" placeholder="您的标题" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                            <textarea  name="Message" type="text" rows="3"class="form-control" placeholder="您的内容"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <span class="pull-right"><input type="submit" class="form-control" value="提交"></span>
+                    </div>
+                </form>
+
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="list-group">
+                <a href="#history" class="list-group-item"> 发展历程 </a>
+                <a href="#joinus" class="list-group-item"> 加入我们 </a>
+                <a href="#contact" class="list-group-item"> 联系方式 </a>
+
+            </div>
+        </div> 
+    
+    </div>
+</div>
+
+
+{% endblock %}
