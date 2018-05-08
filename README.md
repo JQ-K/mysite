@@ -6,4 +6,4 @@
 
 使用 linux + gunicorn + nginx部署 
 
-网站地址 
+[网站地址]: http://23.105.200.109/home/ 
